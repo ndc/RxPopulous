@@ -1,0 +1,260 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, sans-serif;
+  color: #e9f1e8;
+  background: #101a20;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button,
+select,
+input {
+  font: inherit;
+}
+button,
+select {
+  border: 1px solid #536c6a;
+  border-radius: 7px;
+  color: #e9f1e8;
+  background: #263b3b;
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+}
+button:hover {
+  border-color: #b6d5aa;
+}
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid #dbdb89;
+  outline-offset: 2px;
+}
+button.primary,
+button.selected {
+  background: #a7cf83;
+  color: #17241b;
+  border-color: #a7cf83;
+  font-weight: 700;
+}
+button.secondary {
+  background: #253739;
+}
+header {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  border-bottom: 1px solid #344747;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1 {
+  margin: 0;
+  font-size: 1.45rem;
+  letter-spacing: -0.05em;
+}
+h2 {
+  letter-spacing: -0.03em;
+}
+h3 {
+  font-size: 1rem;
+}
+.eyebrow {
+  color: #a9cd91;
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+main {
+  padding: 1.5rem 2rem;
+  max-width: 1700px;
+  margin: auto;
+}
+.panel {
+  background: #1c2c2d;
+  border: 1px solid #3c5250;
+  border-radius: 12px;
+}
+.menu {
+  max-width: 760px;
+  padding: 2rem;
+  margin: 4vh auto;
+}
+.menu h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0 1rem;
+}
+label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 600;
+  margin-top: 1.3rem;
+}
+input[type="file"] {
+  color: #b7c9bd;
+  max-width: 100%;
+}
+input[type="file"]::file-selector-button {
+  padding: 0.5rem;
+  border: 1px solid #536c6a;
+  border-radius: 6px;
+  background: #263b3b;
+  color: #e9f1e8;
+}
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.muted {
+  color: #acc2b8;
+}
+.small {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.warning {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #433c27;
+  border-radius: 7px;
+  color: #f0dfab;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.game-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+.game-top h2 {
+  margin: 0.25rem 0 0;
+  font-size: 1.25rem;
+}
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-weight: 600;
+}
+.play-area {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 1rem;
+}
+.map {
+  min-height: 65vh;
+  height: calc(100vh - 200px);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #12212a;
+}
+.map canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+.sidebar {
+  padding: 1.2rem;
+  max-height: calc(100vh - 200px);
+  overflow: auto;
+}
+.actions {
+  display: grid;
+  gap: 0.5rem;
+}
+.actions button {
+  text-align: left;
+}
+#feedback {
+  color: #e4d59f;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  min-height: 3em;
+}
+details pre {
+  max-height: 220px;
+  overflow: auto;
+  font-size: 0.7rem;
+}
+dialog {
+  color: #e9f1e8;
+  background: #1c2c2d;
+  border: 1px solid #536c6a;
+  border-radius: 12px;
+  width: min(600px, 95vw);
+  max-height: 90vh;
+}
+dialog::backdrop {
+  background: #000a;
+}
+.dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dialog-heading h2 {
+  margin: 0;
+}
+.bindings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 1.5rem;
+}
+.bindings > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.bindings button {
+  min-width: 100px;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 800px) {
+  header {
+    padding: 0 1rem;
+  }
+  main {
+    padding: 1rem;
+  }
+  .play-area {
+    grid-template-columns: 1fr;
+  }
+  .map {
+    min-height: 50vh;
+    height: 50vh;
+  }
+  .sidebar {
+    max-height: none;
+  }
+  .actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .game-top,
+  .stats {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .file-grid,
+  .bindings {
+    grid-template-columns: 1fr;
+  }
+}
